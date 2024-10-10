@@ -19,6 +19,8 @@ AFRAME.registerComponent('event-manager', {
     this.netButtonEl = document.querySelector('#netButton');
     this.todosButtonEl = document.querySelector('#todosButton');    
     this.startButtonEl = document.querySelector('#startButton');    
+    // this.anchorButtonEl = document.querySelector('#anchorButton');
+    // this.unAnchorButtonEl = document.querySelector('#unAnchorButton');
     this.menuEl = document.querySelector('#menu');    
 
     this.button1El.addEventListener('click', this.onClick);
@@ -36,6 +38,8 @@ AFRAME.registerComponent('event-manager', {
     this.netButtonEl.addEventListener('click', this.onClick);
     this.todosButtonEl.addEventListener('click', this.onClick);    
     this.startButtonEl.addEventListener('click', this.onClick);    
+    // this.anchorButtonEl.addEventListener('click', this.onClick);    
+    // this.unAnchorButtonEl.addEventListener('click', this.onClick);    
       
     //this.solButtonEl.addState('pressed');
 
@@ -83,6 +87,11 @@ AFRAME.registerComponent('event-manager', {
           pEl.emit(`resetAnimation${pEl.id.slice(0,3)}`, null, true);          
         }
     });
+    
+    this.el.addEventListener('physicscollided', (event) => {
+      console.log(this.el.id);
+  });
+
   },
 
   bindMethods: function () {
@@ -141,5 +150,13 @@ AFRAME.registerComponent('event-manager', {
     if (targetEl === this.todosButtonEl) {
       socket.emit('resetPressed', 'reset');
     }
+
+    // if (targetEl === this.anchorButtonEl) {
+    //   document.getElementById("anchorContainer").reAnchor();
+    // }
+
+    // if (targetEl === this.unAnchorButtonEl) {
+    //   document.getElementById("anchorContainer").unAnchor(false);
+    // }
   }
 });
