@@ -11,6 +11,8 @@
     <script src="aframe/menu.js"></script>
     <script src="aframe/pressable.js"></script>
     <script src="aframe/event-manager.js"></script>    
+    <script src="aframe/reanchor.js"></script> 
+    
     <script src="config/orbitais.js"></script>
   </head>
   <body>    
@@ -159,10 +161,10 @@
           <a-entity id="todosButton" button="label: todos; width: 0.14; color:blue" position="0 -0.16 0"></a-entity>          
           <a-entity id="unAnchorButton" reanchor button="uan: todos; width: 0.08; color: red" position="0.12 -0.16 0"></a-entity>
         </a-entity>
-        </a-entity>
-        <a-entity hand-tracking-controls="hand: left" shadow="cast: true"></a-entity>
-        <a-entity hand-tracking-controls="hand: right"></a-entity>
+        </a-entity>        
       </a-entity>
+      <a-entity hand-tracking-controls="hand: left" shadow="cast: true"></a-entity>
+      <a-entity hand-tracking-controls="hand: right"></a-entity>
     </a-scene>
     
     <script src="/socket.io/socket.io.js"></script>

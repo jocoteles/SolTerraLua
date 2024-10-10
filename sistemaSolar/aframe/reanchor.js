@@ -15,13 +15,13 @@ AFRAME.registerComponent('reanchor', {
   
         const el = this.data.anchoredEl
         const anchoredComponent = el.components['anchored']
-
-        anchoredComponent.reAnchor();      
-        console.log('REancorado!');
-            
+        
         if (targetEl === document.getElementById("anchorButton")) {
-            anchoredComponent.reAnchor();      
-            console.log('REancorado!');
+            anchoredComponent.reAnchor();
+            targetEl.setAttribute("material", "color", "yellow");
+        }
+        if (targetEl === document.getElementById("unAnchorButton")) {
+            anchoredComponent.unAnchor(false);
         }
     },
 

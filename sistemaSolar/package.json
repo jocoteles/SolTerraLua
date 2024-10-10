@@ -4,6 +4,7 @@
     "description": "Exposição do Sistema Solar em Realidade Virtual",
     "type": "module",
     "dependencies": {
+        "aframe-anchored": "^0.0.1",
         "express": "^4.19.2",
         "socket.io": "^4.7.5"
     }
