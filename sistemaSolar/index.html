@@ -12,13 +12,27 @@
     <script src="aframe/pressable.js"></script>
     <script src="aframe/event-manager.js"></script>    
     <script src="config/orbitais.js"></script>
+    <!-- Script adicionado em nova alteração -->
+    <script src="aframe/follow-camera.js"></script>
+    <link rel="stylesheet" href="assets/style.css" />
+
   </head>
   <body>    
+    <!-- Botão de resete externo     -->
+    <button onclick="refreshAndClearCache()" id="myButton">Clique Aqui</button>
+    <!-- Componentes da cena -->
+
     <a-scene
       info-message="htmlSrc: #messageText"
       xr-mode-ui="XRMode: xr"      
       light="defaultLightsEnabled: false"
     >
+      <!-- Início das alterações -->
+      <a-entity id="camera" camera look-controls wasd-controls></a-entity>
+              
+      <a-entity follow-camera id="boxButton" button="label: reset" position="0 0 0"></a-entity>
+      <!-- Fim das alterações -->
+
       <a-assets>
         <a-asset-item id="messageText" src="aframe/message.html"></a-asset-item>
         <img id="solMapa" src="assets/sol.jpg">

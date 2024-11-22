@@ -74,3 +74,10 @@ AFRAME.registerComponent('button', {
     this.el.setAttribute('material', {color: this.data.color});
   }
 });
+
+
+// Função para atualizar página e limpar cache inclusa no botão externo
+function refreshAndClearCache() {
+  // Adiciona um parâmetro único à URL para forçar a atualização sem cache
+  location.reload(true);
+}
